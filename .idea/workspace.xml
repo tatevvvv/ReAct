@@ -4,24 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d4680f3-8749-4c62-9e49-f94ab85b2ba9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ReAct.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/ReActMainAgent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/ReActReasoner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IntelligenceProviders/GeminiModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/WikipediaPlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/WolframAlphaPlugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/prompts/prompts_naive.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abstractions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wikienv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wrappers.py" afterDir="false" />
+    <list default="true" id="0d4680f3-8749-4c62-9e49-f94ab85b2ba9" name="Changes" comment="changes">
+      <change afterPath="$PROJECT_DIR$/persistence/ContextMemory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/persistence/MongoDbRepository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/persistence/SQLiteRepository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/persistence/abstractions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/ReActMainAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/ReActMainAgent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/ReActReasoner.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/ReActReasoner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IntelligenceProviders/GeminiModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/intelligence/GeminiModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/WikipediaPlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/wikipedia/WikipediaPlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/WolframAlphaPlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/WolframAlphaPlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/prompts/prompts_naive.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/prompts/prompts_naive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abstractions.py" beforeDir="false" afterPath="$PROJECT_DIR$/intelligence/abstractions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikienv.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/wikipedia/wikienv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/wikipedia/wrappers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tatevvvv&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tatevvvv/ReAct&quot;,
+    &quot;accountId&quot;: &quot;9a1fbc3a-b9a2-4ee3-85f1-e96e8638f416&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -69,6 +82,9 @@
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\prompts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\plugins" />
+      <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\plugins\prompts\Wikipedia" />
+      <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\IntelligenceProviders" />
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\Plugins" />
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\Inteligence Providers" />
     </key>
@@ -91,20 +107,39 @@
       <updated>1745321813069</updated>
       <workItem from="1745321814310" duration="287000" />
       <workItem from="1745322129752" duration="3512000" />
-      <workItem from="1745326298720" duration="7668000" />
+      <workItem from="1745326298720" duration="21384000" />
+      <workItem from="1745488505241" duration="30165000" />
     </task>
+    <task id="LOCAL-00001" summary="changes">
+      <option name="closed" value="true" />
+      <created>1745417058352</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745417058352</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>file://$PROJECT_DIR$/main.ipynb</url>
-          <line>6</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/start.ipynb</url>
+          <line>44</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/core/ReActReasoner.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

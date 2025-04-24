@@ -25,7 +25,7 @@ class WikiEnv(gym.Env):
           Initialize the environment.
         """
         super().__init__()
-        self.page = None  # current Wikipedia page
+        self.page = None  # current wikipedia page
         self.obs = None  # current observation
         self.lookup_keyword = None  # current lookup keyword
         self.lookup_list = None  # list of paragraphs containing current lookup keyword
@@ -45,7 +45,7 @@ class WikiEnv(gym.Env):
     def reset(self, seed=None, return_info=False, options=None):
         # We need the following line to seed self.np_random
         # super().reset(seed=seed)
-        self.obs = ("Interact with Wikipedia using search[], lookup[], and "
+        self.obs = ("Interact with wikipedia using search[], lookup[], and "
                     "finish[].\n")
         self.page = None
         self.lookup_keyword = None

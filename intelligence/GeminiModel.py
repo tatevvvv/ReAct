@@ -1,5 +1,5 @@
 from typing import List
-from abstractions import LLMModel
+from intelligence.abstractions import LLMModel
 from google import genai
 from google.genai import types
 

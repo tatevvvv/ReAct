@@ -1,12 +1,12 @@
 import json
 import time
 from typing import List
-
+import os
 import gym
 import requests
 from bs4 import BeautifulSoup
 
-from abstractions import ReActPlugin
+from intelligence.abstractions import ReActPlugin
 
 def clean_str(p):
   return p.encode().decode("unicode-escape").encode("latin1").decode("utf-8")
@@ -17,14 +17,14 @@ class textSpace(gym.spaces.Space):
     return isinstance(x, str)
 
 def get_wiki_prompt():
-    folder = './prompts/'
-    prompt_file = 'prompts_naive.json'
-    with open(folder + prompt_file, 'r') as f:
+    base_dir = os.path.dirname(__file__)  # folder containing WikipediaPlugin.py
+    filepath = os.path.join(base_dir, 'prompts', 'prompts_naive.json')
+    with open(filepath, 'r') as f:
         prompt_dict = json.load(f)
 
     webthink_examples = prompt_dict['webthink_simple6']
     instruction = """Solve a question answering task with interleaving Thought, Action, Observation steps. Thought can reason about the current situation, and Action can be three types: 
-    (1) Search[entity], which searches the exact entity on Wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to search.
+    (1) Search[entity], which searches the exact entity on wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to search.
     (2) Lookup[keyword], which returns the next sentence containing keyword in the current passage.
     (3) Finish[answer], which returns the answer and finishes the task.
     Here are some examples.
@@ -43,7 +43,7 @@ class WikipediaPlugin(ReActPlugin):
         return actions
 
     def __init__(self, env):
-        super().__init__("Wikipedia")
+        super().__init__("wikipedia")
         self.env = env
 
     def step(self, action):
@@ -56,7 +56,7 @@ class WikiEnv(gym.Env):
           Initialize the environment.
         """
         super().__init__()
-        self.page = None  # current Wikipedia page
+        self.page = None  # current wikipedia page
         self.obs = None  # current observation
         self.lookup_keyword = None  # current lookup keyword
         self.lookup_list = None  # list of paragraphs containing current lookup keyword
@@ -76,7 +76,7 @@ class WikiEnv(gym.Env):
     def reset(self, seed=None, return_info=False, options=None):
         # We need the following line to seed self.np_random
         # super().reset(seed=seed)
-        self.obs = ("Interact with Wikipedia using search[], lookup[], and "
+        self.obs = ("Interact with wikipedia using search[], lookup[], and "
                     "finish[].\n")
         self.page = None
         self.lookup_keyword = None
@@ -157,7 +157,8 @@ class WikiEnv(gym.Env):
     def step(self, action):
         reward = 0
         done = False
-        action = action.strip()
+        action = action.strip().lower()
+        print(f'tatev {action}')
         if self.answer is not None:  # already finished
             done = True
             return self.obs, reward, done, self._get_info()
