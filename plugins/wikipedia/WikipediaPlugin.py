@@ -18,7 +18,7 @@ class textSpace(gym.spaces.Space):
 
 def get_wiki_prompt():
     base_dir = os.path.dirname(__file__)  # folder containing WikipediaPlugin.py
-    filepath = os.path.join(base_dir, 'prompts', 'prompts_naive.json')
+    filepath = os.path.join(base_dir, 'prompts_naive.json')
     with open(filepath, 'r') as f:
         prompt_dict = json.load(f)
 
@@ -30,6 +30,7 @@ def get_wiki_prompt():
     Here are some examples.
     """
     webthink_prompt = instruction + webthink_examples
+    webthink_prompt += "\n End of Examples\n"
     return webthink_prompt
 
 class WikipediaPlugin(ReActPlugin):
@@ -47,7 +48,6 @@ class WikipediaPlugin(ReActPlugin):
         self.env = env
 
     def step(self, action):
-        print('called step for wikipedia plugin')
         return self.env.step(action)
 
 class WikiEnv(gym.Env):
@@ -129,7 +129,6 @@ class WikiEnv(gym.Env):
 
     def search_step(self, entity):
         entity_ = entity.replace(" ", "+")
-        print('wiki search')
         search_url = f"https://en.wikipedia.org/w/index.php?search={entity_}"
         old_time = time.time()
         response_text = requests.get(search_url).text
@@ -158,7 +157,6 @@ class WikiEnv(gym.Env):
         reward = 0
         done = False
         action = action.strip().lower()
-        print(f'tatev {action}')
         if self.answer is not None:  # already finished
             done = True
             return self.obs, reward, done, self._get_info()

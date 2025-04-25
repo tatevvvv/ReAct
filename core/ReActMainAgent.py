@@ -1,4 +1,5 @@
 import atexit
+
 from core.ReActReasoner import ReActReasoner
 from persistence.ContextMemory import ContextMemory
 from persistence.abstractions import Repository
@@ -10,13 +11,14 @@ class ReActMainAgent:
 
         reasoner = ReActReasoner(llm=llm, plugins=plugins, memory=self.memory)
         self.reasoner = reasoner
-        #if hasattr(memory, "flush"):
-            #atexit.register(lambda: memory.flush())
 
-    def start(self, question: str, transparency: bool = True) -> str:
+    def ask(self, question: str, transparency: bool = True) -> str:
         answer, trace = self.reasoner.run(question)
         if transparency:
             print("--- Trace ---")
             for step in trace:
                 print(step)
-        return answer
+        return answer, trace
+
+    def flush(self):
+        self.memory.flush()

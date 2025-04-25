@@ -8,7 +8,7 @@ import requests
 from persistence.MongoDbRepository import MongoDbRepository
 from persistence.SQLiteRepository import SQLLiteRepository
 from plugins.wikipedia.WikipediaPlugin import WikipediaPlugin
-from plugins.WolframAlphaPlugin import WolframAlphaPlugin
+from plugins.wolframAlpha.WolframAlphaPlugin import WolframAlphaPlugin
 from plugins.wikipedia.wikienv import WikiEnv
 
 

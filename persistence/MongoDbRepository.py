@@ -9,17 +9,19 @@ class MongoDbRepository(Repository):
         self.col = self.client[configuration['mongodb']['db']][configuration['mongodb']['collection']]
 
     def get_session_data(self, session_id: str) -> Dict[str, Any]:
-        doc = self.col.find_one({"session_id": session_id}) or None
-        return {
-            "summary": doc.get("summary", ""),
-            "conversation": doc.get("conversation", "")
-        }
+        doc = self.col.find_one({"_id": session_id})
+        if doc is not None:
+            return {
+                "summaries": doc.get("summaries", ""),
+                "conversation": doc.get("conversation", "")
+            }
+        return doc
 
     def upsert_session_data(self, session_id: str, data: Dict[str, Any]) -> None:
         self.col.update_one(
-            {"session_id": session_id},
+            {"_id": session_id},
             {"$set": {
-                "summary": data.get("summary", ""),
+                "summaries": data.get("summaries", ""),
                 "conversation": data.get("conversation", "")
             }},
             upsert=True

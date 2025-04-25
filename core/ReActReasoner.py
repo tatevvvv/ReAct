@@ -7,7 +7,6 @@ from persistence.ContextMemory import ContextMemory
 class ReActReasoner:
     def __init__(
         self,
-        session_id,
         llm: LLMModel,
         plugins: List[ReActPlugin],
         memory: ContextMemory,
@@ -16,25 +15,24 @@ class ReActReasoner:
         self.llm = llm
         self.plugins = plugins
         self.memory = memory
-        self.step_limit = step_limit
-
+        self.step_limit = step_limit ## how many steps we will tolerate llm to perform before finding the answer.
         headers = [p.prompt_header() for p in plugins]
         self.prompt_header = "".join(headers)
+        self.memory.add_prompt(self.prompt_header)
 
     def run(self, question: str, to_print: bool = True) -> Any:
-        convo = self.memory.context("conversation", "")
-        print(f'chat history: {convo}')
+        summary = self.memory.context["summaries"]
+        qa = question
         if to_print:
             print(question)
         prompt = self.prompt_header
-        if convo:
-            prompt += convo + "\n"
+        if summary:
+            prompt += summary + "\n"
 
         prompt += f"Question: {question}" + "\n"
         n_calls, n_badcalls= 0,0
         for i in range(1, self.step_limit + 1):
             n_calls+=1
-            print(f'prompt is : {prompt}')
             thought_action = self.llm.generate(
                 prompt + f"Thought {i}:",
                 stop=[f"\nObservation {i}:"]
@@ -57,13 +55,14 @@ class ReActReasoner:
             if to_print:
                 print(step_str)
             if done:
-                print(f'last thought: {thought}')
-                self.memory.upsert_conversation(question, thought)
-
-                summary_prompt = f"Summarize the conversation so far into one paragraph:\n{convo}\nSummary:"
-                new_summary = self.llm.generate(summary_prompt, stop=["\n"]).strip()
-                self.memory.upsert_conversation(new_summary)
                 break
+
+        qa += f'\nAnswer:{thought}'
+        self.memory.upsert_conversation(question, prompt)
+
+        summary_prompt = f"Summarize the conversation into one paragraph include what was the question, what was the answer:\n The conversation: {qa}\nSummary:"
+        new_summary = self.llm.generate(summary_prompt, stop=["\n"]).strip()
+        self.memory.upsert_summary(new_summary)
 
         if not done:
             obs, r, done, info = Helper.step(plugin, "finish[]")
