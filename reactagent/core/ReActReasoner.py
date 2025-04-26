@@ -48,8 +48,13 @@ class ReActReasoner:
                 n_badcalls+=1
                 n_calls+=1
                 thought = thought_action.strip().split('\n')[0]
-                action = self.llm(prompt + f"Thought {i}: {thought}\nAction {i}:", stop=[f"\n"]).strip()
-
+                try:
+                 action = self.llm(prompt + f"Thought {i}: {thought}\nAction {i}:", stop=[f"\n"]).strip()
+                except:
+                    done = True
+                    obs = ""
+                    info=""
+                    break
             tool_name = action.split("[", 1)[0].lower()
             if current_plugin is None:
                 plugin = Helper.get_plugin(self.plugins, tool_name)

@@ -67,13 +67,14 @@ Thought 2: Obtained Pi value clearly.
 Action 2: Finish[3.1415926535]
     """
 
-    def __init__(self):
+    def __init__(self, api_key):
         super().__init__("WolframAlpha")
-        self.env = WolframEnv()
+        self.env = WolframEnv(api_key)
 
 class WolframEnv(gym.Env):
-    def __init__(self):
+    def __init__(self, api_key):
         super().__init__()
+        self.api_key = api_key
         self.obs = None  # current observation
         self.steps = 0  # current number of steps
         self.answer = None  # current answer from the agent
@@ -94,13 +95,12 @@ class WolframEnv(gym.Env):
         return (observation, info) if return_info else observation
 
     def search_step(self, entity):
-        appid = 'WQ9U7Q-HK5W5UPEPV'
         start = entity.find('"input": "') + len('"input": "')
         end = entity.find('"', start)
 
         input_value = entity[start:end]
         input_value=input_value.replace(" ", "+")
-        url = f"https://www.wolframalpha.com/api/v1/llm-api?input={input_value}&appid={appid}&maxchars=500"
+        url = f"https://www.wolframalpha.com/api/v1/llm-api?input={input_value}&appid={self.api_key}&maxchars=500"
         response_text = requests.get(url).text
         if response_text =="":  # mismatch
             self.obs = f"Could not solve {entity}."

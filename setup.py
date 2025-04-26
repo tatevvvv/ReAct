@@ -7,13 +7,13 @@ setup(
     author="Tatevik Abrahamyan",
     packages=find_packages(),
     include_package_data=True,
-    python_requires=">=3.9",          # ← bump from 3.8 → 3.9
+    python_requires=">=3.9",
     install_requires=[
         "pymongo",
         "gym",
         "requests",
         "protobuf",
         "beautifulsoup4",
-        "google-genai>=1.0.0"         # ← correct package name
+        "google-genai>=1.0.0"
     ],
 )

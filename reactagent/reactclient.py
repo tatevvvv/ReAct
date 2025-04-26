@@ -26,9 +26,7 @@ def main():
 
     llm, plugins, ltm = Helper.resolve_dependencies(cfg)
     agent = ReActMainAgent(session_id,llm, plugins, ltm)
-    ## todo: validate session id
     print(f"Session: {session_id} started. Ask a question")
-
 
     while True:
         try:

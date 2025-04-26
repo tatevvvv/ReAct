@@ -17,7 +17,7 @@ class textSpace(gym.spaces.Space):
     return isinstance(x, str)
 
 def get_wiki_prompt():
-    base_dir = os.path.dirname(__file__)  # folder containing WikipediaPlugin.py
+    base_dir = os.path.dirname(__file__)
     filepath = os.path.join(base_dir, 'prompts_naive.json')
     with open(filepath, 'r') as f:
         prompt_dict = json.load(f)
@@ -57,13 +57,13 @@ class WikiEnv(gym.Env):
           Initialize the environment.
         """
         super().__init__()
-        self.page = None  # current wikipedia page
-        self.obs = None  # current observation
-        self.lookup_keyword = None  # current lookup keyword
-        self.lookup_list = None  # list of paragraphs containing current lookup keyword
-        self.lookup_cnt = None  # current lookup index
-        self.steps = 0  # current number of steps
-        self.answer = None  # current answer from the agent
+        self.page = None
+        self.obs = None
+        self.lookup_keyword = None
+        self.lookup_list = None
+        self.lookup_cnt = None
+        self.steps = 0
+        self.answer = None
         self.observation_space = self.action_space = textSpace()
         self.search_time = 0
         self.num_searches = 0
@@ -90,13 +90,11 @@ class WikiEnv(gym.Env):
         return (observation, info) if return_info else observation
 
     def construct_lookup_list(self, keyword):
-        # find all paragraphs
         if self.page is None:
             return []
         paragraphs = self.page.split("\n")
         paragraphs = [p.strip() for p in paragraphs if p.strip()]
 
-        # find all sentence
         sentences = []
         for p in paragraphs:
             sentences += p.split('. ')
@@ -108,11 +106,9 @@ class WikiEnv(gym.Env):
 
     @staticmethod
     def get_page_obs(page):
-        # find all paragraphs
         paragraphs = page.split("\n")
         paragraphs = [p.strip() for p in paragraphs if p.strip()]
 
-        # find all sentence
         sentences = []
         for p in paragraphs:
             sentences += p.split('. ')

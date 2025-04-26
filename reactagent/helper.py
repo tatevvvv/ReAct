@@ -1,14 +1,12 @@
 from typing import Optional
 import os
 
-from build.lib.reactagent.persistence.SQLiteRepository import SQLLiteRepository
 from reactagent.intelligence.GeminiModel import GeminiModel
 from reactagent.intelligence.abstractions import ReActPlugin
 import requests
 
 from reactagent.persistence.DummyRepository import DummyRepository
 from reactagent.persistence.MongoDbRepository import MongoDbRepository
-from reactagent.persistence.SQLiteRepository import SQLiteRepository
 from reactagent.plugins.wikipedia.WikipediaPlugin import WikipediaPlugin
 from reactagent.plugins.wolframAlpha.WolframAlphaPlugin import WolframAlphaPlugin
 
@@ -43,14 +41,15 @@ class Helper:
         if configuration.get("plugins", {}).get("wikipedia", "off").lower() == "on":
             plugins.append(WikipediaPlugin())
         if configuration.get("plugins", {}).get("wolfram", "off").lower() == "on":
-            plugins.append(WolframAlphaPlugin())
+            wolfram_api_key = os.environ.get("WOLFRAM_API_KEY")
+            plugins.append(WolframAlphaPlugin(wolfram_api_key))
         ltm = None
         ltm_backend = configuration.get("persistence").lower()
         if ltm_backend == "mongodb":
             ltm = MongoDbRepository(configuration)
-        elif ltm_backend == "sqllite":
-            ltm = SQLLiteRepository()
-        else:
+        elif ltm_backend == "dummy":
             ltm = DummyRepository()
+        else:
+            raise Exception(f"Unsupported ltm backend: {ltm_backend}")
 
         return llm, plugins, ltm

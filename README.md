@@ -46,8 +46,10 @@ Create a file named `appsettings.json` in your project folder with the following
 }
 ```
 
-For persistence there are two options available. sqllite, mongodb
+For persistence there is one option available. mongodb
 If you prefer skipping persistence, put the value 'dummy'
+If you want to continue old conversation, provide the conversation session_id, and it will load in memory
+conversation context.
 
 ### 4. Use the package in your code
 
@@ -100,7 +102,7 @@ Make sure `appsettings.json` exists in the repo root (or create it as shown abov
 ### 4. Run `reactclient.py`
 
 ```bash
-python client.py
+python reactclient.py
 ```
 
 This script will prompt you to enter a question and then display the agent’s response.

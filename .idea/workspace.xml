@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d4680f3-8749-4c62-9e49-f94ab85b2ba9" name="Changes" comment="added package build files">
-      <change afterPath="$PROJECT_DIR$/Documentation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-architecture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/persistence/DummyRepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ReAct.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ReAct.iml" afterDir="false" />
+    <list default="true" id="0d4680f3-8749-4c62-9e49-f94ab85b2ba9" name="Changes" comment="fixed setup.py">
+      <change afterPath="$PROJECT_DIR$/Documentation.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Examples.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/wikipedia/WikipediaPlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/plugins/wikipedia/WikipediaPlugin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactagent/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactagent/core/ReActReasoner.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/core/ReActReasoner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactagent/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/reactclient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/persistence/DummyRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/persistence/DummyRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/plugins/wikipedia/WikipediaPlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/plugins/wikipedia/WikipediaPlugin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactagent/start.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/start.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/start.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +155,10 @@
       <workItem from="1745682370423" duration="5481000" />
       <workItem from="1745690674595" duration="190000" />
       <workItem from="1745690899420" duration="398000" />
-      <workItem from="1745691316677" duration="9776000" />
+      <workItem from="1745691316677" duration="13264000" />
+      <workItem from="1745704731917" duration="722000" />
+      <workItem from="1745705488657" duration="1357000" />
+      <workItem from="1745706878407" duration="415000" />
     </task>
     <task id="LOCAL-00001" summary="changes">
       <option name="closed" value="true" />
@@ -179,7 +184,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745669480306</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added readme.md and documentation file">
+      <option name="closed" value="true" />
+      <created>1745701275895</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745701275895</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixed setup.py">
+      <option name="closed" value="true" />
+      <created>1745702269365</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745702269365</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +221,9 @@
     <MESSAGE value="changes" />
     <MESSAGE value="added db support" />
     <MESSAGE value="added package build files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added package build files" />
+    <MESSAGE value="added readme.md and documentation file" />
+    <MESSAGE value="fixed setup.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed setup.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -219,16 +242,6 @@
           <url>file://$PROJECT_DIR$/start.ipynb</url>
           <line>30</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>file://$PROJECT_DIR$/reactagent/start.ipynb</url>
-          <line>8</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>file://$PROJECT_DIR$/reactagent/start.ipynb</url>
-          <line>44</line>
-          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/core/ReActReasoner.py</url>
@@ -260,23 +273,13 @@
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py</url>
           <line>97</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
