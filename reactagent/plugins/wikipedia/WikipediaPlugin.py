@@ -6,7 +6,7 @@ import gym
 import requests
 from bs4 import BeautifulSoup
 
-from intelligence.abstractions import ReActPlugin
+from reactagent.intelligence.abstractions import ReActPlugin
 
 def clean_str(p):
   return p.encode().decode("unicode-escape").encode("latin1").decode("utf-8")
@@ -43,13 +43,14 @@ class WikipediaPlugin(ReActPlugin):
         actions =  ['search', 'lookup', 'finish']
         return actions
 
-    def __init__(self, env):
+    def __init__(self):
         super().__init__("wikipedia")
-        self.env = env
+        self.env = WikiEnv()
 
     def step(self, action):
         return self.env.step(action)
-
+    def reset(self):
+        self.env.reset()
 class WikiEnv(gym.Env):
     def __init__(self):
         """
@@ -159,7 +160,7 @@ class WikiEnv(gym.Env):
         action = action.strip().lower()
         if self.answer is not None:  # already finished
             done = True
-            return self.obs, reward, done, self._get_info()
+            return self.obs, done, self._get_info()
 
         if action.startswith("search[") and action.endswith("]"):
             entity = action[len("search["):-1]
@@ -190,7 +191,7 @@ class WikiEnv(gym.Env):
 
         self.steps += 1
 
-        return self.obs, reward, done, self._get_info()
+        return self.obs, done, self._get_info()
 
     def get_time_info(self):
         speed = self.search_time / self.num_searches if self.num_searches else 0

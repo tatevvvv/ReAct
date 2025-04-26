@@ -4,36 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d4680f3-8749-4c62-9e49-f94ab85b2ba9" name="Changes" comment="minor fixes for memory structure to be stored in db">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/Agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/core/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/intelligence/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/persistence/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/plugins/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/plugins/wikipedia/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactagent/plugins/wolframAlpha/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+    <list default="true" id="0d4680f3-8749-4c62-9e49-f94ab85b2ba9" name="Changes" comment="added package build files">
+      <change afterPath="$PROJECT_DIR$/Documentation.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-architecture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactagent/persistence/DummyRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ReAct.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ReAct.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/ReActMainAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/core/ReActMainAgent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/ReActReasoner.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/core/ReActReasoner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intelligence/GeminiModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/intelligence/GeminiModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intelligence/abstractions.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/intelligence/abstractions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/ContextMemory.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/persistence/ContextMemory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/MongoDbRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/persistence/MongoDbRepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/SQLiteRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/abstractions.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/persistence/abstractions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/wikipedia/WikipediaPlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/plugins/wikipedia/WikipediaPlugin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/wikipedia/prompts_naive.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/plugins/wikipedia/prompts_naive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/wikipedia/wikienv.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/wikipedia/wrappers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/wolframAlpha/WolframAlphaPlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/start.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/core/ReActReasoner.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/core/ReActReasoner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactagent/start.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/reactagent/start.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +47,10 @@
     &quot;accountId&quot;: &quot;9a1fbc3a-b9a2-4ee3-85f1-e96e8638f416&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="showPreview" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -74,20 +62,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/zeroadmin/PycharmProjects/ReAct/reactagent/plugins",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.python -m venv .venv.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/zeroadmin/PycharmProjects/ReAct/reactagent/plugins&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.jupyter.core.jupyter.connections.configuration.JupyterServerConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\reactagent\plugins" />
@@ -97,12 +87,42 @@
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\reactagent\intelligence" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct" />
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\reactagent" />
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\plugins\wolframAlpha" />
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\plugins\wikipedia" />
       <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\plugins" />
-      <recent name="C:\Users\zeroadmin\PycharmProjects\ReAct\plugins\prompts\Wikipedia" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="python -m venv .venv" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ReAct" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="venv" />
+      <option name="PARAMETERS" value=".venv" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.python -m venv .venv" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -128,7 +148,12 @@
       <workItem from="1745588752900" duration="256000" />
       <workItem from="1745589057322" duration="1375000" />
       <workItem from="1745610823212" duration="5552000" />
-      <workItem from="1745662203797" duration="6487000" />
+      <workItem from="1745662203797" duration="12147000" />
+      <workItem from="1745682146033" duration="216000" />
+      <workItem from="1745682370423" duration="5481000" />
+      <workItem from="1745690674595" duration="190000" />
+      <workItem from="1745690899420" duration="398000" />
+      <workItem from="1745691316677" duration="9776000" />
     </task>
     <task id="LOCAL-00001" summary="changes">
       <option name="closed" value="true" />
@@ -146,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745537602890</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added package build files">
+      <option name="closed" value="true" />
+      <created>1745669480306</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745669480306</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +199,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changes" />
     <MESSAGE value="added db support" />
-    <option name="LAST_COMMIT_MESSAGE" value="added db support" />
+    <MESSAGE value="added package build files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added package build files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -188,8 +222,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>file://$PROJECT_DIR$/reactagent/start.ipynb</url>
-          <line>7</line>
-          <option name="timeStamp" value="19" />
+          <line>8</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>file://$PROJECT_DIR$/reactagent/start.ipynb</url>
+          <line>44</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/core/ReActReasoner.py</url>
@@ -220,7 +259,35 @@
           <url>file://$PROJECT_DIR$/reactagent/helper.py</url>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/reactagent/persistence/SQLiteRepository.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/reactagent/plugins/wolframAlpha/WolframAlphaPlugin.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/reactagent/plugins/wikipedia/WikipediaPlugin.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ReAct$python__m_venv__venv.coverage" NAME="python -m venv .venv Coverage Results" MODIFIED="1745670988960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

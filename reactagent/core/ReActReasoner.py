@@ -22,15 +22,19 @@ class ReActReasoner:
 
     def run(self, question: str, transparency: bool = True) -> Any:
         summary = self.memory.context["summaries"]
+        for plugin in self.plugins:
+            plugin.reset()
+        current_plugin = None
         qNa = question
         if transparency:
             print(question)
         prompt = self.prompt_header
         if summary:
-            prompt += summary + "\n"
+            prompt += f"This is summary of previous conversations: {summary} + \n"
 
         prompt += f"Question: {question}" + "\n"
         n_calls, n_badcalls= 0,0
+
         for i in range(1, self.step_limit + 1):
             n_calls+=1
             thought_action = self.llm.generate(
@@ -47,8 +51,18 @@ class ReActReasoner:
                 action = self.llm(prompt + f"Thought {i}: {thought}\nAction {i}:", stop=[f"\n"]).strip()
 
             tool_name = action.split("[", 1)[0].lower()
-            plugin = Helper.get_plugin(self.plugins, tool_name)
-            obs, done, info = Helper.step(plugin, action[0].lower() + action[1:])
+            if current_plugin is None:
+                plugin = Helper.get_plugin(self.plugins, tool_name)
+                current_plugin = plugin
+            else:
+                plugin = Helper.get_plugin(self.plugins, tool_name)
+
+                if plugin.name != current_plugin.name:
+                    # switch plugin
+                    print(f'plugin switched from {current_plugin.name} to {plugin.name}')
+                    current_plugin = plugin
+
+            obs, done, info = Helper.step(current_plugin, action[0].lower() + action[1:])
             obs = obs.replace('\\n', '')
             step_str = f"Thought {i}: {thought}\nAction {i}: {action}\nObservation {i}: {obs}\n"
             prompt += step_str
