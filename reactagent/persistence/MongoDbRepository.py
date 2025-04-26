@@ -1,7 +1,7 @@
 from typing import Dict, Any
 from pymongo import MongoClient
 
-from persistence.abstractions import Repository
+from reactagent.persistence.abstractions import Repository
 
 class MongoDbRepository(Repository):
     def __init__(self, configuration):

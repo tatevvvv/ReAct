@@ -1,7 +1,5 @@
-import json
 from typing import List
-import os
-from intelligence.abstractions import ReActPlugin
+from reactagent.intelligence.abstractions import ReActPlugin
 
 
 class WolframAlphaPlugin(ReActPlugin):

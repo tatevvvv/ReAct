@@ -1,15 +1,14 @@
 from typing import Optional
 import os
 
-from intelligence.GeminiModel import GeminiModel
-from intelligence.abstractions import ReActPlugin
+from reactagent.intelligence.GeminiModel import GeminiModel
+from reactagent.intelligence.abstractions import ReActPlugin
 import requests
 
-from persistence.MongoDbRepository import MongoDbRepository
-from persistence.SQLiteRepository import SQLLiteRepository
-from plugins.wikipedia.WikipediaPlugin import WikipediaPlugin
-from plugins.wolframAlpha.WolframAlphaPlugin import WolframAlphaPlugin
-from plugins.wikipedia.wikienv import WikiEnv
+from reactagent.persistence.MongoDbRepository import MongoDbRepository
+from reactagent.persistence.SQLiteRepository import SQLLiteRepository
+from reactagent.plugins.wikipedia.WikipediaPlugin import WikipediaPlugin
+from reactagent.plugins.wolframAlpha.WolframAlphaPlugin import WolframAlphaPlugin
 
 
 class Helper:
@@ -40,7 +39,7 @@ class Helper:
             raise Exception(f"Unsupported llm model: {model_name}")
         plugins = []
         if configuration.get("plugins", {}).get("wikipedia", "off").lower() == "on":
-            plugins.append(WikipediaPlugin(WikiEnv()))
+            plugins.append(WikipediaPlugin())
         if configuration.get("plugins", {}).get("wolfram", "off").lower() == "on":
             plugins.append(WolframAlphaPlugin())
         ltm = None

@@ -1,5 +1,5 @@
 from typing import Dict, Any
-from persistence.abstractions import Repository, ShortTermMemory
+from reactagent.persistence.abstractions import Repository
 
 
 class ContextMemory:

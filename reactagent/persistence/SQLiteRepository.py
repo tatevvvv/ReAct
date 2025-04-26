@@ -1,7 +1,7 @@
 import sqlite3
 from typing import Dict, Any
 
-from persistence.abstractions import Repository
+from reactagent.persistence.abstractions import Repository
 
 
 class SQLLiteRepository(Repository):

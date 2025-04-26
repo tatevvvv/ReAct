@@ -1,5 +1,5 @@
 from helper import Helper
-from core.ReActMainAgent import ReActMainAgent
+from reactagent.core.ReActMainAgent import ReActMainAgent
 import json
 from uuid import uuid4
 from typing import Dict
